@@ -4,10 +4,13 @@ from rest_framework_nested import routers
 
 from api import views
 
-router = routers.DefaultRouter()
-router.register(r'artistas', views.ArtistaViewSet)
-router.register(r'albuns', views.AlbumViewSet)
-router.register(r'musicas', views.MusicaViewSet)
+router = routers.SimpleRouter()
+router.register(r'users', views.UserViewSet)
+users_router = routers.NestedSimpleRouter(router, r'users', lookup='user')
+users_router.register(r'todos', views.TodosViewSet)
+router.register(r'todos', views.TodosViewSet)
+router.register(r'comments', views.CommentViewSet)
+router.register(r'posts', views.PostViewSet)
 
 # Wire up our API using automatic URL routing.
 urlpatterns = [
