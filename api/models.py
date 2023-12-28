@@ -17,11 +17,9 @@ class post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=100)
 
-def __str__(self):
-    return self.nome
 
-
-class Musica(models.Model):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    nome = models.CharField(max_length=100)
-    segundos = models.IntegerField()
+class todos(models.Model):
+    userid = models.ForeignKey(max_length=100)
+    id = models.CharField(max_length=100)    
+    title = models.CharField(max_length=100)
+    completed = models.BooleanField(max_length=100)
