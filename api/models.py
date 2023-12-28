@@ -4,9 +4,9 @@ class User(models.Model):
     name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     email = models.EmailField()
-    endereço = models.CharField()
+    endereço = models.CharField(max_length = 500)
     phone = models.CharField(max_length=11)
-    website = models.CharField()
+    website = models.CharField(max_length = 500)
     company = models.CharField(max_length=255)
 
 
@@ -19,7 +19,7 @@ class Todos(models.Model):
     completed = models.BooleanField(False)
 
 class Post(models.Model):
-    userid = models.ForeignKey(max_length=100)
+    userid = models.ForeignKey(User, on_delete = models.CASCADE)
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=100)
 
