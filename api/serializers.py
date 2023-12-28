@@ -1,17 +1,18 @@
+
 from rest_framework import serializers
-from .models import Artista, Album, Musica
+from .models import User, Todos, Post
 
-class ArtistaSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Artista
+        model = User
         fields = '__all__'
 
-class AlbumSerializer(serializers.ModelSerializer):
+class TodosSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Album
+        model = Todos
         fields = '__all__'
 
-class MusicaSerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Musica
+        model = Post
         fields = '__all__'
