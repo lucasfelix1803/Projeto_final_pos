@@ -11,14 +11,18 @@ def __str__(self):
     return self.nome
 
 
-class Album(models.Model):
-    artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
-    nome = models.CharField(max_length=100)
-    ano = models.IntegerField()
+class User(models.Model):
+    name = models.CharField(max_length=100)
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+    endereço = models.CharField()
+    phone = models.CharField(max_length=11)
+    websitev = models.CharField()
+    company = models.CharField(max_length=255)
 
 
 def __str__(self):
-    return self.nome
+    return self.name
 
 
 class Musica(models.Model):
