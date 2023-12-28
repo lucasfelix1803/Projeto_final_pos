@@ -2,14 +2,12 @@ from django.db import models
 
 class post(models.Model):
     userid = models.ForeignKey(max_length=100)
-    id = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     body = models.TextField(max_length=100)
 
 
 class todos(models.Model):
     userid = models.ForeignKey(max_length=100)
-    id = models.CharField(max_length=100)    
     title = models.CharField(max_length=100)
     completed = models.BooleanField(max_length=100)
 
